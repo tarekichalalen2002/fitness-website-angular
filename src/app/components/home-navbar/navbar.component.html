@@ -1,0 +1,55 @@
+<nav
+  class="text-light-gray bg-dark-brown rounded-full px-5 py-2 flex justify-between items-center"
+>
+  <div class="text-lg text-orange">Logo</div>
+  <div class="flex gap-1 items-center">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      class="text-sm cursor-pointer hover:text-orange ease-in-out duration-300 min-w-[150px] flex items-center justify-center font-extralight py-2 rounded-full bg-dark-gray"
+    >
+      Home
+    </a>
+    <a
+      routerLink="/class"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      class="text-sm cursor-pointer hover:text-orange ease-in-out duration-300 min-w-[150px] flex items-center justify-center font-extralight py-2 rounded-full bg-dark-gray"
+    >
+      Class
+    </a>
+    <a
+      routerLink="/membership"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      class="text-sm cursor-pointer hover:text-orange ease-in-out duration-300 min-w-[150px] flex items-center justify-center font-extralight py-2 rounded-full bg-dark-gray"
+    >
+      Membership
+    </a>
+    <a
+      routerLink="/trainers"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      class="text-sm cursor-pointer hover:text-orange ease-in-out duration-300 min-w-[150px] flex items-center justify-center font-extralight py-2 rounded-full bg-dark-gray"
+    >
+      Trainers
+    </a>
+    <a
+      routerLink="/contacts"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      class="text-sm cursor-pointer hover:text-orange ease-in-out duration-300 min-w-[150px] flex items-center justify-center font-extralight py-2 rounded-full bg-dark-gray"
+    >
+      Contacts
+    </a>
+  </div>
+  <div>
+    <button
+      class="text-sm bg-orange px-4 py-3 rounded-full text-white font-semibold"
+    >
+      VIEW OFFERS
+    </button>
+  </div>
+</nav>
+<router-outlet></router-outlet>

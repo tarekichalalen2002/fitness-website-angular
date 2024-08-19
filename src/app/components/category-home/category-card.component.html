@@ -1,0 +1,27 @@
+<div
+  class="w-[300px] h-[300px] bg-dark-brown rounded-lg relative bg-gradient-to-b from-transparent to-dark-gray"
+  [@firstSeen]="isSeen ? 'true' : 'false'"
+>
+  <img
+    [src]="category.image"
+    class="h-[80%] text-white absolute right-0 bottom-0 z-0"
+    alt="Image"
+  />
+  <div class="z-20 absolute left-5 top-5 w-1/2 flex flex-col gap-5">
+    <h1 class="text-[25px] font-extrabold text-orange">
+      {{ category.title.split(" ")[0] }}
+      {{ category.title.split(" ")[1] }}
+    </h1>
+    <p class="text-light-brown text-semibold">
+      {{ category.description }}
+    </p>
+  </div>
+  <div class="absolute bottom-5 left-5">
+    <button
+      class="text-light-gray hover:text-white ease-in-out duration-300 font-semibold flex items-center gap-2"
+    >
+      Learn More
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+  </div>
+</div>

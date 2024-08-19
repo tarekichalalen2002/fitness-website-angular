@@ -1,0 +1,18 @@
+<div class="h-screen py-4 text-white" >
+  <div class="flex justify-between items-center">
+    <h2 class="text-[40px] font-bold">
+      OUR
+      <span class="text-orange"> TRAINERS </span>
+    </h2>
+    <p class="font-semibold text-light-brown w-[40%] text-center">
+      Our trainer and fitness experts are here to help you achieve your fitness,
+      they provide guidance on exercices and die and offer support and
+      motivation.
+    </p>
+  </div>
+  <div class="w-full flex justify-around items-center mt-20">
+    @for (trainer of trainers; track trainer.name){
+    <app-trainer-card [trainer]="trainer" />
+    }
+  </div>
+</div>

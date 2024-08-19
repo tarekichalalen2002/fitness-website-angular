@@ -1,0 +1,79 @@
+<div
+  class="text-white flex w-full justify-center items-center relative min-h-[100vh]"
+>
+  <div class="w-full flex flex-col items-center gap-10">
+    <h1 class="text-[60px] text-center font-extrabold w-[70%]">
+      TRANSFORM YOUR <br />
+      <span class="text-orange text-[50px] font-bold"> BODY, </span>
+      <span class="text-[50px] font-bold">
+        TRANSFORM <br />
+        <span class="font-medium"> YOURSELF </span>
+      </span>
+    </h1>
+    <p class="w-[40%] text-center text-light-brown font-semibold">
+      transform your body, transform your life. welcome to our gym where every
+      drop of sweat brings you closer to your goals.
+    </p>
+
+    <button class="text-sm bg-orange px-4 py-3 rounded-full text-white font-semibold">
+      VIEW OFFERS
+    </button>
+  </div>
+  <div class="absolute left-0 bottom-[0px] -z-10 w-[400px] min-h-[500px]">
+    <img
+      src="biceps-curl.png"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="Image"
+    />
+    <div
+      class="absolute inset-0"
+      style="
+        background: radial-gradient(
+          farthest-side,
+          transparent 70%,
+          #090401 100%
+        );
+      "
+    ></div>
+  </div>
+  <div class="absolute right-0 bottom-[50px] -z-10 min-w-[600px] min-h-[500px]">
+    <img
+      src="double-biceps.png"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="Image"
+    />
+  </div>
+</div>
+@defer (on viewport) {
+<categories-home />
+} @placeholder{
+<p class="text-white">categories-home</p>
+} @loading{
+<div class="w-full flex justify-center">
+  <fa-icon [icon]="faSpinner" class="fa-spin text-white text-3xl"></fa-icon>
+</div>
+} @defer (on viewport) {
+<app-latest-news />
+} @placeholder{
+<p class="text-white">latest-news</p>
+} @loading (minimum 0.5s){
+<div class="w-full flex justify-center">
+  <fa-icon [icon]="faSpinner" class="fa-spin text-white text-3xl"></fa-icon>
+</div>
+} @defer (on viewport) {
+<app-trainers-home />
+} @placeholder{
+<p class="text-white">latest-news</p>
+} @loading (minimum 0.5s){
+<div class="w-full flex justify-center">
+  <fa-icon [icon]="faSpinner" class="fa-spin text-white text-3xl"></fa-icon>
+</div>
+} @defer (on viewport) {
+<app-testomonials />
+} @placeholder{
+<p class="text-white">testimonials</p>
+} @loading (minimum 0.5s){
+<div class="w-full flex justify-center">
+  <fa-icon [icon]="faSpinner" class="fa-spin text-white text-3xl"></fa-icon>
+</div>
+}

@@ -1,0 +1,163 @@
+<div class="w-full min-h-[100vh] text-white flex flex-col items-center">
+  <div class="w-full flex justify-center py-10">
+    <h1 class="text-center font-bold text-[40px]">
+      WHAT OUR
+      <span class="text-orange"> CUSTOMERS </span>
+      SAY
+    </h1>
+  </div>
+  <div class="w-full h-full relative">
+    <!-- <div class="px-10 relative w-full">
+      <img
+        [src]="testomonials[currentTestomonial].image"
+        class="h-[70vh] {{ changing && 'opacity-0' }}"
+        [@imageSlide]="changing ? 'right' : 'left'"
+      />
+      <div
+        class="w-[35%] absolute top-[50%] left-[20%] rounded-lg bg-dark-brown pb-5"
+        [@fadeContent]="changing ? 'hidden' : 'visible'"
+      >
+        <div class="relative py-4 px-10 {{ changing && 'opacity-0' }} ">
+          <p class="text-xl flex italic">
+            <span class="font-extrabold text-orange absolute top-0 left-1">
+              <fa-icon
+                [icon]="faQuoteLeft"
+                class="text-orange text-[40px]"
+              ></fa-icon>
+            </span>
+            {{ testomonials[currentTestomonial].content }}
+            <span class="font-extrabold text-orange absolute bottom-0 right-1">
+              <fa-icon
+                [icon]="faQuoteRight"
+                class="text-orange text-[40px]"
+              ></fa-icon>
+            </span>
+          </p>
+        </div>
+        <div
+          class="px-10 flex justify-between items-center {{
+            changing && 'opacity-0'
+          }}"
+        >
+          <div class="flex flex-col">
+            <h4 class="text-xl font-bold">
+              {{ testomonials[currentTestomonial].name }}
+            </h4>
+            <p class="text-light-gray">
+              {{ testomonials[currentTestomonial].address }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute w-[20%] right-0 bottom-10 grid grid-cols-2 gap-4">
+      <div
+        class="bg-dark-brown py-10 flex items-center justify-center cursor-pointer bg-gradient-to-b from-transparent to-dark-gray rounded-lg hover:brightness-150 ease-in-out duration-300 {{
+          changing && 'opacity-0'
+        }}"
+        (click)="moveright()"
+        [@lasttonext]="changing ? 'left' : 'right'"
+      >
+        <img [src]="testomonials[nextTestomonial].image" />
+      </div>
+      <div
+        class="bg-dark-brown py-10 flex items-center justify-center cursor-pointer bg-gradient-to-b from-transparent to-dark-gray rounded-lg hover:brightness-150 ease-in-out duration-300"
+        (click)="moveleft()"
+        [@currenttolast]="
+          changing
+            ? 'right'
+            : 'left
+        '
+        "
+      >
+        <img [src]="testomonials[lastTestomonial].image" />
+      </div>
+    </div>
+    <div class="absolute flex gap-2 items-center right-[30%] bottom-[10%]">
+      <button
+        class="w-[50px] h-[50px] rounded-full border border-light-gray text-light-gray"
+        (click)="moveleft()"
+      >
+        <fa-icon class="" [icon]="faArrowLeft"></fa-icon>
+      </button>
+      <button
+        class="w-[50px] h-[50px] rounded-full border border-light-gray text-light-gray"
+        (click)="moveright()"
+      >
+        <fa-icon class="" [icon]="faArrowRight"></fa-icon>
+      </button>
+    </div> -->
+    <div class="px-10 relative w-full min-h-[70vh]">
+      @for ( testomonial of testomonials; track testomonial.id){
+      <div class="h-[70vh] absolute top-0 left-0 flex flex-col">
+        <img
+          [src]="testomonial.image"
+          class="h-[70vh] {{
+            testomonial.id !== currentTestomonial &&
+              'cursor-pointer brightness-75 hover:brightness-125 ease-in-out duration-300 px-2 py-16 rounded-lg bg-gradient-to-b from-dark-brown to-transparent'
+          }}"
+          (click)="handleclick(testomonial.id)"
+          [@imageAnime]="
+            currentTestomonial === testomonial.id
+              ? 'current'
+              : nextTestomonial === testomonial.id
+              ? 'next'
+              : 'last'
+          "
+        />
+      </div>
+      <div
+        class="w-[35%] absolute top-[50%] left-[20%] rounded-lg bg-dark-brown pb-5 {{
+          currentTestomonial !== testomonial.id && 'hidden'
+        }}"
+      >
+        <div class="relative py-4 px-10 {{ changing && 'opacity-0' }} ">
+          <p class="text-xl flex italic">
+            <span class="font-extrabold text-orange absolute top-0 left-1">
+              <fa-icon
+                [icon]="faQuoteLeft"
+                class="text-orange text-[40px]"
+              ></fa-icon>
+            </span>
+            {{ testomonial.content }}
+            <span class="font-extrabold text-orange absolute bottom-0 right-1">
+              <fa-icon
+                [icon]="faQuoteRight"
+                class="text-orange text-[40px]"
+              ></fa-icon>
+            </span>
+          </p>
+        </div>
+        <div
+          class="px-10 flex justify-between items-center {{
+            changing && 'opacity-0'
+          }}"
+        >
+          <div class="flex flex-col">
+            <h4 class="text-xl font-bold">
+              {{ testomonial.name }}
+            </h4>
+            <p class="text-light-gray">
+              {{ testomonial.address }}
+            </p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="absolute flex gap-2 items-center right-[30%] bottom-[5%]">
+      <button
+        class="w-[50px] h-[50px] rounded-full border-2 border-light-gray text-light-gray hover:text-orange hover:border-orange ease-in-out duration-300"
+        (click)="moveleft()"
+      >
+        <fa-icon class="" [icon]="faArrowLeft"></fa-icon>
+      </button>
+      <button
+        class="w-[50px] h-[50px] rounded-full border-2 border-light-gray text-light-gray hover:text-orange hover:border-orange ease-in-out duration-300"
+        (click)="moveright()"
+      >
+        <fa-icon class="" [icon]="faArrowRight"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>
